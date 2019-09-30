@@ -1,6 +1,8 @@
 import _ from 'lodash'
 import './style.css'
 import WPPath from './WP.png'
+import xmlDate from './data.xml'
+
 function component(){
     var element = document.createElement('div')
     element.innerHTML = _.join(['Hello','webpack'],' ')
@@ -10,6 +12,7 @@ function component(){
     var myIcon = new Image()
     myIcon.src = WPPath
     element.appendChild(myIcon)
+    console.log(xmlDate)
     return element
 }
 document.body.appendChild(component())
