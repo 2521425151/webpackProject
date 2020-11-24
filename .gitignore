@@ -7,3 +7,4 @@ yarn-error.log
 update.sh
 package-lock.json
 .history
+dist
