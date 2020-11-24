@@ -2,6 +2,8 @@ const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
+    // 方便追踪源代码错误
+    devtool: 'source-map',
     entry: {
         index: './src/js/index.js',
         login: './src/js/login.js'
