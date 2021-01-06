@@ -1,0 +1,6 @@
+console.log("webpack log start node");
+
+const arr =  [1,  2,  3];
+const ES6fn =  ()  => 
+console.log(...arr);
+window.ES6fn = ES6fn;
