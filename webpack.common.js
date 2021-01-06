@@ -1,5 +1,6 @@
 const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -11,7 +12,7 @@ module.exports = {
         // js生成到dist/js，[name]表示保留原js文件名
         filename: 'js/[name].js',
         // 输出路径为dist
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
@@ -33,5 +34,11 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        // 修改webpack.common.js，代码作用是将src/static直接copy到dist，并重命名为static。
+        new CopyWebpackPlugin({
+            patterns: [
+              { from: './src/static', to: 'static' }
+            ],
+        })
     ]
 };
