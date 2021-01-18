@@ -4,15 +4,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-        start: './src/node/start.js',
-        end: './src/node/end.js'
+        "m/js/start": './src/node/start.js',
+        "m/js/end": './src/node/end.js',
+        "pc/js/start": './src/node/start.js',
+        "PC/js/end": './src/node/end.js'
     },
     // 编译输出配置
     output: {
-        // js生成到dist/js，[name]表示保留原js文件名
-        filename: 'js/[name].js',
-        // 输出路径为dist
-        path: path.resolve(__dirname, 'dist'),
+        // [name]表示保留原js文件名
+        filename: '[name].js',
+        // 更改输出路径dist -> custom_output
+        path: path.resolve(__dirname, 'custom_output'),
     },
     module: {
         rules: [

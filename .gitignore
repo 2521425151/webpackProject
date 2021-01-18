@@ -8,3 +8,4 @@ update.sh
 package-lock.json
 .history
 dist
+custom_output
