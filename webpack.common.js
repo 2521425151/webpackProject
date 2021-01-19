@@ -75,7 +75,8 @@ module.exports = {
                 if(chunk.name.includes('css')){ // 直接在入口配置css文件
                     return `[name].css`
                 }else{ // 引入到相应入口的js文件的css文件
-                    return `${chunk.name.split("/")[0]}/css/${chunk.name.split("/")[2]}.css`;
+                    
+                    return `${chunk.name.replace(/js/g, 'css')}.css`;
                 }
                 
             },
