@@ -1,3 +1,4 @@
+import "@/style/style.scss";
 console.log("webpack log start node");
 
 const arr =  [1,  2,  3];
